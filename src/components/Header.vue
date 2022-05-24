@@ -1,0 +1,79 @@
+<template>
+  <header class="header">
+    <div class="container">
+      <div class="header__block">
+        <h1 class="header__title">Добавление товара</h1>
+        <div class="header__triangle">
+          <select class="header__select">
+            <option>По умолчанию</option>
+            <option>По возрастанию</option>
+            <option>По убыванию</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </header>
+</template>
+
+<style lang="scss" scoped>
+@import "../layout.scss";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: rem(16px);
+  padding-top: rem(32px);
+
+  &__title {
+    font-size: rem(28px);
+  }
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+
+    @include phones {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__select {
+    -webkit-appearance: none;
+    min-width: rem(125px);
+    min-height: rem(32px);
+    padding: rem(10px) rem(32px) rem(11px) rem(16px);
+    border: none;
+    border: solid rem(1px) transparent;
+    border-radius: 6px;
+    box-shadow: 0 rem(3px) rem(15px) rem(1px) rgba(0, 0, 0, 0.1);
+    font-size: rem(12px);
+    color: #b4b4b4;
+
+    &:focus-visible {
+      border: solid rem(1px) #3f3f3f;
+      outline: 0;
+    }
+  }
+}
+
+.header__triangle {
+  position: relative;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: rem(94px);
+    bottom: rem(6px);
+    right: 0;
+    margin: auto;
+    width: rem(8px);
+    height: rem(8px);
+    border-bottom: 2px solid #b4b4b4;
+    border-left: 2px solid #b4b4b4;
+    transform: rotate(-45deg);
+  }
+}
+</style>
